@@ -1,11 +1,61 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
+import phoneMockup from "../assets/images/hero/hero-img.png";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import appleLogo from "../assets/images/hero/asset-apple.svg";
+import facebookLogo from "../assets/images/hero/asset-fb.svg";
+import googleLogo from "../assets/images/hero/asset-google.svg";
+import teslaLogo from "../assets/images/hero/asset-tesla.svg";
+import mcdonaldsLogo from "../assets/images/hero/asset-mcdonalds.svg";
 ---
 
 <Layout>
-	<Welcome />
+  <section class="md:mt-30 mt-7 flex flex-col gap-5 md:flex-row md:items-start">
+    <div class="order-2 flex flex-col gap-7 sm:gap-12 md:order-1 md:w-1/2">
+      <div class="mt-5 md:mb-10">
+        <p
+          class="mb-2 flex-row-reverse text-4xl font-semibold text-[#67B4F7] sm:text-7xl"
+        >
+          Investing Is
+        </p>
+        <p class="li text-4xl text-white sm:text-7xl">Even Better Now</p>
+      </div>
+      <p class="text-xs text-[#6D7BA0] md:text-xl">
+        Providing you with the opportunity to invest <br /> in more than 100 assets
+        for continuous income
+      </p>
+
+      <ul class="flex flex-row items-center">
+        <li><img src={appleLogo.src} alt="apple logo" /></li>
+        <li><img src={facebookLogo.src} alt="facebook logo" /></li>
+        <li><img src={googleLogo.src} alt="google logo" /></li>
+        <li><img src={teslaLogo.src} alt="tesla logo" /></li>
+        <li><img src={mcdonaldsLogo.src} alt="mcdonalds logo" /></li>
+        <li
+          class="border-1 rounded-full border-[#28497A] bg-[#2C3753] px-14 py-3 text-xs text-white md:px-7 md:text-base"
+        >
+          +100 assets
+        </li>
+      </ul>
+
+      <div class="mt-5">
+        <a
+          href="#"
+          class="rounded-md bg-[#2F96F0] px-10 py-3 text-white hover:bg-[#4FBBFF]"
+          >Get Started</a
+        >
+      </div>
+    </div>
+
+    <img
+      src={phoneMockup.src}
+      alt="Phone mockup"
+      class="order-1 m-0 mx-auto mt-7 w-full max-w-xs p-0 sm:mt-0 md:order-2 md:max-w-md"
+    />
+  </section>
+
+  <section class="my-20">
+    <p class="text-center text-2xl text-white md:text-5xl">For All Devices</p>
+    <div></div>
+  </section>
 </Layout>
