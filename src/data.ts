@@ -1,7 +1,7 @@
 // header
 export const navLinks = [
   { name: "Home", href: "/" },
-  { name: "Services", href: "/services/" },
+  { name: "Services", href: "/services" },
   { name: "About", href: "/about" },
   { name: "FAQ", href: "/faq" },
 ];
@@ -61,21 +61,21 @@ export const features = [
   {
     title: "Multiplatform",
     description: "Our trading platform is available on all devices",
-    imgSrc: "images/about/icon-vanuatu.svg",
+    imgSrc: "/images/about/icon-vanuatu.svg",
     imgAlt: "Multiplatform icon",
   },
   {
     title: "Security standards",
     description:
       "Verified by Visa and MasterCard. All data is encrypted with strongest cryptographic algorithms",
-    imgSrc: "images/about/icon-vfrs-bit.svg",
+    imgSrc: "/images/about/icon-vfrs-bit.svg",
     imgAlt: "Security standards icon",
   },
   {
     title: "Accurate quotes",
     description:
       "Real-time market data provided by leading analytical agencies",
-    imgSrc: "images/about/icon-lock.svg",
+    imgSrc: "/images/about/icon-lock.svg",
     imgAlt: "Accurate quotes icon",
   },
 ];
