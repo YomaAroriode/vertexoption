@@ -1,0 +1,97 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Button from "../components/Button.astro";
+
+const services = [
+  {
+    title: "Cutting-Edge Trading Technology",
+    content:
+      "VertexOption offers lightning-fast order execution, real-time market data, and minimal slippage. Trade confidently on a platform optimized for performance and efficiency.",
+    image: "/images/services/service-1.jpg",
+  },
+  {
+    title: "Advanced Trading Tools",
+    content:
+      "Leverage professional trading tools, including **multi-chart layouts, technical indicators, and risk management features**, to enhance your trading strategies.",
+    image: "/images/services/service-2.jpg",
+  },
+  {
+    title: "Social Trading & Insights",
+    content:
+      "Connect with top traders globally, copy successful strategies, and gain insights into market trends. Learn, observe, and trade with confidence.",
+    image: "/images/services/service-3.jpg",
+  },
+  {
+    title: "Wide Range of Financial Assets",
+    content:
+      "Trade over **100+ financial instruments**, including:\n\n✅ Stocks: Apple, Tesla, Facebook\n✅ Forex: EUR/USD, GBP/JPY, more\n✅ Cryptocurrencies: Bitcoin, Ethereum\n✅ Commodities: Gold, Oil, Silver\n✅ Indices: S&P 500, NASDAQ",
+    image: "/images/services/service-4.jpg",
+  },
+  {
+    title: "Secure & Regulated Platform",
+    content:
+      "VertexOption is a **fully regulated and secure platform**, offering multi-layer encryption, 2FA security, and compliance with financial regulations.",
+    image: "/images/services/service-5.jpg",
+  },
+  {
+    title: "24/7 Customer Support",
+    content:
+      "Our dedicated support team is available **24/7** to assist with any trading or account-related inquiries, ensuring a smooth trading experience.",
+    image: "/images/services/service-6.jpg",
+  },
+];
+---
+
+<Layout>
+  <section class="box mb-20 mt-10 px-6 py-12">
+    <!-- Page Header -->
+    <div class="mb-10 flex flex-col items-center text-center">
+      <div class="flex flex-row items-center gap-2">
+        <img
+          src="/images/services/features.svg"
+          alt="Services"
+          class="h-10 w-10"
+        />
+        <p class="mt-3 text-3xl font-bold text-white">Our Services</p>
+      </div>
+
+      <p class="text-md mt-2 max-w-2xl text-gray-300">
+        Experience professional trading with advanced tools, fast execution, and
+        top-tier security.
+      </p>
+    </div>
+
+    <!-- Service List -->
+    <div class="grid gap-10 lg:grid-cols-2">
+      {
+        services.map(({ title, content, image }) => (
+          <div class="flex flex-col items-start gap-10 lg:flex-row lg:items-center">
+            <img
+              src={image}
+              alt={title}
+              class="h-40 w-full rounded-lg object-cover shadow-md lg:w-48"
+            />
+            <div>
+              <p class="text-lg font-bold text-white">{title}</p>
+              <p class="mt-2 whitespace-pre-line text-sm text-gray-300">
+                {content}
+              </p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+
+    <!-- Call to Action -->
+    <div class="mt-16 flex flex-col items-center text-center">
+      <p class="text-2xl font-semibold text-white">
+        Start Trading with VertexOption Today
+      </p>
+      <p class="mt-2 max-w-xl text-sm text-gray-300">
+        Join thousands of traders worldwide and take advantage of our
+        cutting-edge trading platform.
+      </p>
+      <Button title="Open an Account" />
+    </div>
+  </section>
+</Layout>

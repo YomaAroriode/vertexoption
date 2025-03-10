@@ -1,24 +1,19 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import phoneMockup from "../assets/images/hero/hero-img.png";
+import Card from "../components/Card.astro";
+import Button from "../components/Button.astro";
+import Section from "../layouts/Section.astro";
 
-import appleLogo from "../assets/images/hero/asset-apple.svg";
-import facebookLogo from "../assets/images/hero/asset-fb.svg";
-import googleLogo from "../assets/images/hero/asset-google.svg";
-import teslaLogo from "../assets/images/hero/asset-tesla.svg";
-import mcdonaldsLogo from "../assets/images/hero/asset-mcdonalds.svg";
+import { platforms, steps, global } from "../data";
 ---
 
 <Layout>
-  <section class="md:mt-30 mt-7 flex flex-col gap-5 md:flex-row md:items-start">
-    <div class="order-2 flex flex-col gap-7 sm:gap-12 md:order-1 md:w-1/2">
+  <!-- Hero Section -->
+  <section class="hero box">
+    <div class="hero-content">
       <div class="mt-5 md:mb-10">
-        <p
-          class="mb-2 flex-row-reverse text-4xl font-semibold text-[#67B4F7] sm:text-7xl"
-        >
-          Investing Is
-        </p>
-        <p class="li text-4xl text-white sm:text-7xl">Even Better Now</p>
+        <p class="hero-text hero-highlight-1">Investing Is</p>
+        <p class="hero-text text-white">Even Better Now</p>
       </div>
       <p class="text-xs text-[#6D7BA0] md:text-xl">
         Providing you with the opportunity to invest <br /> in more than 100 assets
@@ -26,36 +21,80 @@ import mcdonaldsLogo from "../assets/images/hero/asset-mcdonalds.svg";
       </p>
 
       <ul class="flex flex-row items-center">
-        <li><img src={appleLogo.src} alt="apple logo" /></li>
-        <li><img src={facebookLogo.src} alt="facebook logo" /></li>
-        <li><img src={googleLogo.src} alt="google logo" /></li>
-        <li><img src={teslaLogo.src} alt="tesla logo" /></li>
-        <li><img src={mcdonaldsLogo.src} alt="mcdonalds logo" /></li>
-        <li
-          class="border-1 rounded-full border-[#28497A] bg-[#2C3753] px-14 py-3 text-xs text-white md:px-7 md:text-base"
-        >
-          +100 assets
-        </li>
+        {
+          ["fb", "apple", "google", "tesla", "mcdonalds"].map((logo) => (
+            <li>
+              <img src={`images/hero/${logo}.svg`} alt={`${logo} logo`} />
+            </li>
+          ))
+        }
+        <li class="assets-icon">+100 assets</li>
       </ul>
 
-      <div class="mt-5">
-        <a
-          href="#"
-          class="rounded-md bg-[#2F96F0] px-10 py-3 text-white hover:bg-[#4FBBFF]"
-          >Get Started</a
-        >
-      </div>
+      <Button title="Get Started" />
     </div>
 
-    <img
-      src={phoneMockup.src}
-      alt="Phone mockup"
-      class="order-1 m-0 mx-auto mt-7 w-full max-w-xs p-0 sm:mt-0 md:order-2 md:max-w-md"
-    />
+    <img src="images/hero/hero.png" alt="Phone mockup" class="hero-img" />
   </section>
 
-  <section class="my-20">
-    <p class="text-center text-2xl text-white md:text-5xl">For All Devices</p>
-    <div></div>
+  <!-- Platform Section -->
+  <Section title="For All Devices">
+    <Card items={platforms} />
+  </Section>
+
+  <!-- Steps Section -->
+  <Section title="How It Works">
+    <Card items={steps} />
+  </Section>
+
+  <!-- Section -->
+  <section class="box flex flex-col justify-around gap-10 md:flex-row md:gap-0">
+    <div class="flex flex-col items-center justify-center gap-4">
+      <div class="flex flex-row items-center gap-2">
+        <img src="images/trust.svg" alt="Trusted" class="h-[34px] w-[34px]" />
+        <p class="text-4xl text-white">Trusted</p>
+      </div>
+      <p class="platform-version text-center">
+        VertexOption is a leader in the online trading industry. <br /> We are trusted
+        by more than 70,000,000 clients.
+      </p>
+      <Button title="See more" />
+    </div>
+
+    <div>
+      <div class="card">
+        <img
+          src="images/leaderboard.svg"
+          alt="Trophy"
+          class="h-[34px] w-[34px]"
+        />
+        <p class="text-2xl text-white">Best Trading Platform</p>
+        <p class="platform-version text-center">
+          Award winner at China Trading Expo Shenzhen, 6-7 May 2017
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Global Section -->
+  <Section title="Global Trading Platform">
+    <div class="flex flex-col gap-5 md:flex-row">
+      {
+        global.map(({ amount, subtitle }) => (
+          <div class="card text-center">
+            <p class="text-[#259EFA]">{amount}</p>
+            <p class="text-white">{subtitle}</p>
+          </div>
+        ))
+      }
+    </div>
+  </Section>
+
+  <!-- Map Section -->
+  <section class="box mb-20">
+    <p class="mb-10 text-center text-xs text-[#9AA5BA]">
+      People from 48 countries trade at VertexOption
+    </p>
+    <div class="map-section"></div>
   </section>
 </Layout>

@@ -1,0 +1,8 @@
+---
+const { title, imgSrc, additionalClasses = "" } = Astro.props;
+---
+
+<div class={`mt-3 w-full ${additionalClasses}`}>
+  <p class="text-md text-white">{title}</p>
+  <img src={imgSrc} alt={title} class="mt-3 w-full" />
+</div>

@@ -1,14 +1,125 @@
 @import "tailwindcss";
 
+/* Global Styles */
+
 body {
-  background-color: #182030;
+  background-color: black;
+  color: white;
   font-family: "Poppins", sans-serif;
-  margin: 0;
-  margin: auto;
-  max-width: 90rem;
-  padding: 0px 20px 0px 20px;
 }
 
-header {
-  position: sticky;
+.box {
+  max-width: 80rem;
+  padding: 0px 20px 0px 20px;
+  @apply mx-auto;
 }
+
+.nav {
+  margin: auto;
+  max-width: 80rem;
+}
+
+.card {
+  width: 100%;
+  background: linear-gradient(rgb(27, 34, 52) 0%, rgb(30, 39, 59) 100%);
+  border: 1px solid #2e3b5e;
+  border-radius: 15px;
+  margin: 0px auto;
+  position: relative;
+  box-sizing: border-box;
+  transition: background-color 0.15s;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  cursor: pointer;
+}
+
+.card:hover {
+  border: 1px solid #259efa;
+}
+
+.line {
+  color: #101828;
+}
+
+/* Header  */
+.header {
+  @apply mt-5 flex h-14 flex-row items-center justify-between gap-3 rounded-md bg-transparent p-3 text-white md:py-10;
+}
+
+.btn {
+  @apply rounded-lg px-5 py-2 text-sm text-white transition duration-300 ease-in-out;
+}
+
+.btn-login:hover {
+  background: #3b61b4;
+}
+
+.btn-register {
+  @apply flex items-center justify-center gap-5 rounded-md border border-white px-5 py-2;
+  border: 1px solid #39b2ff;
+}
+
+.btn-register:hover {
+  background: #3b61b4;
+}
+
+/* Hero Section */
+.hero {
+  @apply md:mt-30 mt-7 flex flex-col items-start gap-5 md:flex-row;
+}
+
+.hero-content {
+  @apply order-2 flex flex-col gap-3 sm:gap-12 md:order-1 md:w-1/2;
+}
+
+.hero-text {
+  @apply text-4xl sm:text-7xl;
+}
+
+.hero-highlight-1 {
+  @apply mb-2 flex-row-reverse font-semibold text-[#67B4F7];
+}
+
+.assets-icon {
+  @apply border-1 rounded-full border-[#28497A] bg-[#2C3753] px-5 py-3 text-xs text-white md:px-7 md:text-base;
+}
+
+.hero-btn {
+  @apply rounded-md bg-[#2F96F0] px-10 py-3 text-white hover:bg-[#4FBBFF];
+}
+
+.hero-img {
+  @apply order-1 m-0 mx-auto mt-7 max-h-full w-56 max-w-xs p-0 sm:w-48 sm:max-w-xs md:w-64 md:max-w-sm lg:w-72 lg:max-w-md;
+}
+
+/* Platform Section */
+.platform-title {
+  @apply mb-5 text-center text-2xl md:text-5xl;
+}
+
+.platform-version {
+  @apply mt-2 text-xs;
+}
+
+.platform-logo {
+  @apply h-[24px] w-[24px];
+}
+
+/* Map Section */
+.map-section {
+  width: 100%;
+  max-width: 958px;
+  height: auto;
+  aspect-ratio: 958 / 540;
+  background-image: url(/images/map.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 0 auto;
+}
+
+/* About Page */

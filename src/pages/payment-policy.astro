@@ -1,0 +1,83 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const paymentPolicy = [
+  {
+    title: "1. Introduction",
+    content:
+      "This Payment Policy outlines the terms regarding deposits, withdrawals, and transaction processing on VertexOption. By using our services, you agree to comply with this policy.",
+  },
+  {
+    title: "2. Accepted Payment Methods",
+    content:
+      "VertexOption supports various payment methods, including bank transfers, credit/debit cards, and e-wallets. The available options may vary depending on your location.",
+  },
+  {
+    title: "3. Deposit Process",
+    content:
+      "Deposits must be made from accounts registered in your name. We do not accept third-party deposits. The minimum deposit amount is $10 or the equivalent in your local currency.",
+  },
+  {
+    title: "4. Withdrawal Process",
+    content:
+      "Withdrawals must be processed using the same method as the deposit. The minimum withdrawal amount is $10. Processing times vary depending on the payment provider.",
+  },
+  {
+    title: "5. Processing Time",
+    content:
+      "Deposits are usually processed instantly, while withdrawals may take up to 3 business days. Delays may occur due to bank processing times or verification requirements.",
+  },
+  {
+    title: "6. Fees and Charges",
+    content:
+      "VertexOption does not charge fees for deposits or withdrawals. However, your payment provider may impose transaction fees, which are your responsibility.",
+  },
+  {
+    title: "7. Currency Exchange",
+    content:
+      "If your deposit or withdrawal is in a currency other than USD, conversion rates will apply based on the payment provider’s exchange rates. We are not responsible for any rate fluctuations.",
+  },
+  {
+    title: "8. Payment Verification",
+    content:
+      "For security reasons, we may require additional verification before processing transactions, including proof of identity or ownership of the payment method used.",
+  },
+  {
+    title: "9. Refund Policy",
+    content:
+      "Refunds are only applicable in cases of incorrect transactions or duplicate payments. Refunds will be processed to the original payment source within 5-7 business days.",
+  },
+  {
+    title: "10. Fraud Prevention",
+    content:
+      "To protect our users, VertexOption employs strict fraud prevention measures. Any suspicious activity may result in account suspension or additional verification requirements.",
+  },
+  {
+    title: "11. Changes to Payment Policy",
+    content:
+      "We reserve the right to update this Payment Policy at any time. Continued use of our services after updates signifies your acceptance of the new policy.",
+  },
+  {
+    title: "12. Contact Information",
+    content:
+      "If you have any questions regarding payments, please contact our support team at support@vertexoption.com.",
+  },
+];
+---
+
+<Layout>
+  <section class="box mb-20 mt-10 px-6 py-12">
+    <p class="text-4xl">Payment Policy</p>
+
+    <div class="mt-10 flex flex-col gap-10">
+      {
+        paymentPolicy.map(({ title, content }) => (
+          <div>
+            <p class="font-bold">{title}</p>
+            <p class="mt-3 text-[#95A0B6]">{content}</p>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+</Layout>

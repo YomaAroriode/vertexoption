@@ -1,0 +1,75 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const faqs = [
+  {
+    question: "How do I verify my account, and what documents are needed?",
+    answer:
+      "To verify your account, you'll need to make a deposit first and provide a color photo of your valid primary identity document (passport or national ID card) containing a clear photo, full name, date and place of birth, expiration date, and country of issue. For card deposits, we might additionally ask you to provide your card statement in order to have your credit/debit card verified. Please ensure the provided documents are clear and easy to read.",
+  },
+  {
+    question: "What is the minimum deposit and withdrawal amount?",
+    answer:
+      "Minimum deposit and withdrawal are $10 or equal amount in local currency.",
+  },
+  {
+    question: "How can I add a phone number to my account?",
+    answer:
+      "You can add your phone number after making a deposit. In the trade section, a popup message will offer you the option to enter your phone number. Afterward, an SMS code will be sent to verify your phone number. Confirm it with the code provided.",
+  },
+  {
+    question: "Why can't I verify my account before making a deposit?",
+    answer:
+      "The verification process is determined by the deposit method used, so it occurs after you've made the deposit. In many cases, you can withdraw funds back to the same source without verification, but certain withdrawal limits may apply.",
+  },
+  {
+    question:
+      "How can I make a withdrawal, and which payment methods are available?",
+    answer:
+      "To withdraw funds, go to the FINANCES section and create a withdrawal request. The deposited amount will be sent back to the original source, such as the bank card or e-wallet used for the deposit. Your profits will be sent to one of the e-wallets you have chosen from the available options in the Finance section. Third-party wallets or cards are not permitted.",
+  },
+  {
+    question: "Can I earn without making a deposit?",
+    answer:
+      "At the moment, the sole method to earn without making a deposit is through our Referral Program. By participating, you can share your referral code with others, introduce new clients, and receive real funds as a reward. Check the 'Become a Partner' section for details.",
+  },
+  {
+    question: "Can I withdraw funds from the demo account?",
+    answer:
+      "The funds in the demo account are virtual and cannot be withdrawn or transferred to your real trading account. The demo account is strictly meant for practice and learning purposes only.",
+  },
+  {
+    question:
+      "If my account cannot be verified after making a deposit, will I get my funds back?",
+    answer:
+      "Yes, if your account cannot be verified, your deposited funds will be fully refunded to the original payment method. Avoid using third-party wallets or cards for deposits.",
+  },
+  {
+    question: "How much can I earn on the platform?",
+    answer:
+      "Earnings depend on various factors, including trading strategy, market conditions, and risk management. Trading involves risks, and profits are not guaranteed but at the same time, they are unlimited.",
+  },
+  {
+    question: "How can I trust that this is a legitimate trading platform?",
+    answer:
+      "Our platform has been certified by the Financial Commission, meaning it has been reviewed and assessed to ensure a secure and fair trading experience.",
+  },
+];
+---
+
+<Layout>
+  <section class="box mb-20 mt-10 px-6 py-12">
+    <p class="text-4xl">FAQ</p>
+
+    <div class="mt-10 flex flex-col gap-10">
+      {
+        faqs.map(({ question, answer }) => (
+          <div>
+            <p class="font-bold">{question}</p>
+            <p class="mt-3 text-[#95A0B6]">{answer}</p>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+</Layout>

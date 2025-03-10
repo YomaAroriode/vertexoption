@@ -1,0 +1,90 @@
+---
+import { footerLinks, navLinks } from "../data";
+
+import FooterSection from "../layouts/FooterSection.astro";
+import FooterImageSection from "./FooterImageSection.astro";
+---
+
+<footer class="platform-version">
+  <hr class="line" />
+
+  <section
+    class="box mx-auto my-10 grid grid-rows-1 justify-between gap-5 md:grid-cols-4"
+  >
+    <!-- Company Info -->
+    <div class="flex flex-col gap-5 md:mr-12">
+      <p class="text-wrap text-sm leading-relaxed">
+        The Company does not provide services to citizens and/or residents of
+        Australia, Austria, Belarus, Belgium, Bulgaria, Canada, Croatia,
+        Republic of Cyprus, Czech Republic, Denmark, Estonia, Finland, France,
+        Germany, Greece, Hungary, Iceland, Iran, Ireland, Israel, Italy, Latvia,
+        Liechtenstein, Lithuania, Luxembourg, Malta, Myanmar, Netherlands, New
+        Zealand, North Korea, Norway, Poland, Portugal, Romania, Singapore,
+        Slovakia, Slovenia, South Sudan, Spain, Sudan, Sweden, UK, Ukraine, the
+        USA.
+      </p>
+    </div>
+
+    <!-- Navigation Links -->
+    <FooterSection title="Links">
+      {
+        navLinks.map((link) => (
+          <a href={link.href} class="text-sm hover:text-[#2F96F0]">
+            {link.name}
+          </a>
+        ))
+      }
+    </FooterSection>
+
+    <!-- Company Links -->
+    <FooterSection title="Company">
+      {
+        footerLinks.map((link) => (
+          <a href={link.href} class="hover:text-[#2F96F0]">
+            {link.name}
+          </a>
+        ))
+      }
+    </FooterSection>
+
+    <!-- Affiliate & Payment -->
+    <div>
+      <FooterImageSection
+        title="Affiliate program"
+        imgSrc="/images/partners.svg"
+      />
+      <FooterImageSection
+        title="Payment methods"
+        imgSrc="/images/payments.svg"
+        additionalClasses="mt-10 max-w-xs"
+      />
+    </div>
+  </section>
+
+  <hr class="line" />
+
+  <!-- Disclaimer -->
+  <div class="box mb-7 mt-10 flex flex-col gap-7 text-xs">
+    <p>
+      Trading and investing involves significant level of risk and is not
+      suitable and/or appropriate for all clients. Please make sure you
+      carefully consider your investment objectives, level of experience and
+      risk appetite before buying or selling. Buying or selling entails
+      financial risks and could result in a partial or complete loss of your
+      funds, therefore, you should not invest funds you cannot afford to lose.
+      You should be aware of and fully understand all the risks associated with
+      trading and investing, and seek advice from an independent financial
+      advisor if you have any doubts. You are granted limited non-exclusive
+      rights to use the IP contained in this site for personal, non-commercial,
+      non-transferable use only in relation to the services offered on the site.
+      Since EOLabs LLC is not under the supervision of the JFSA, it is not
+      involved with any acts considered to be offering financial products and
+      solicitation for financial services to Japan and this website is not aimed
+      at residents in Japan. EOLabs LLC, Company No 377 LLC 2020, having its
+      registered address at: First Floor, First St. Vincent Bank Ltd., James
+      Street, PO Box 1574, Kingstown, St. Vincent and the Grenadines.
+    </p>
+
+    <p class="text-center">© 2014–2025 VertexOption. All rights reserved.</p>
+  </div>
+</footer>

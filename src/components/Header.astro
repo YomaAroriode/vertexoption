@@ -1,12 +1,11 @@
 ---
+import { navLinks } from "../data";
 import { siteName } from "../config";
 ---
 
-<header
-  class="bg-linear-to-r from-[rgb(24, 33, 50)] to-[rgba(27, 71, 125, 1)] md:py-13 flex h-14 flex-row items-center justify-between gap-3 rounded-md py-3 text-white drop-shadow-sm"
->
-  <button
-    ><svg
+<header class="header box z-50">
+  <button id="menu-button">
+    <svg
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 24 24"
@@ -21,37 +20,53 @@ import { siteName } from "../config";
     </svg>
   </button>
 
-  <div class="hidden flex-row gap-2 sm:flex">
+  <div class="z-50 hidden cursor-pointer items-center gap-2 sm:flex">
     <img src="" alt="logo" />
     <p class="text-2xl text-white">{siteName}</p>
   </div>
 
-  <div class="flex flex-row items-center gap-5">
-    <a
-      href="#"
-      class="rounded-lg px-5 py-2 text-sm transition duration-300 ease-in-out hover:bg-blue-900"
-    >
-      Login
-    </a>
-
-    <a
-      href="#"
-      class="border-1 flex items-center gap-5 rounded-md border-blue-500 py-2 pl-5 pr-3 text-sm transition duration-300 ease-in-out hover:bg-blue-900/50"
-    >
-      Register
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 30 30"
-        stroke-width="1.5"
-        stroke="lightblue"
-        class="size-4"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          d="m8.25 4.5 7.5 7.5-7.5 7.5"></path>
-      </svg>
-    </a>
+  <div class="flex gap-5">
+    <a href="#" class="btn btn-login">Login</a>
+    <a href="#" class="btn btn-register">Register</a>
   </div>
 </header>
+
+<!-- Fullscreen Navigation Menu -->
+<div
+  id="fullscreen-menu"
+  class="invisible fixed inset-0 z-40 bg-[#01051E] text-white opacity-0 transition-all duration-500 ease-in-out"
+>
+  <div class="nav flex flex-col gap-20 pl-[45px] pt-10">
+    <p id="close-menu" class="w-fit cursor-pointer text-2xl font-bold">✕</p>
+
+    <div class="flex flex-col gap-5 text-xl md:gap-10 md:text-3xl">
+      {
+        navLinks.map((link) => (
+          <a href={link.href} class="hover:text-gray-300">
+            {link.name}
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const menu = document.getElementById("fullscreen-menu");
+    const menuButton = document.getElementById("menu-button");
+    const closeButton = document.getElementById("close-menu");
+
+    if (menu && menuButton && closeButton) {
+      menuButton.addEventListener("click", () => {
+        menu.classList.toggle("opacity-0");
+        menu.classList.toggle("invisible");
+      });
+
+      closeButton.addEventListener("click", () => {
+        menu.classList.add("opacity-0");
+        menu.classList.add("invisible");
+      });
+    }
+  });
+</script>

@@ -1,0 +1,166 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Button from "../components/Button.astro";
+
+import { about, features, customerService } from "../data";
+---
+
+<Layout>
+  <section>
+    <div
+      class="box my-10 grid grid-rows-1 justify-between gap-x-36 gap-y-10 md:grid-cols-2"
+    >
+      <div class="my-5 flex flex-col items-start justify-between gap-5">
+        <img
+          src="images/about/about-building@2x.webp"
+          alt="Building"
+          class="max-w-full rounded-lg"
+        />
+
+        <div class="flex flex-row items-center gap-2">
+          <img
+            src="images/about/about.svg"
+            alt="Search icon"
+            class="h-[38px] w-[38px]"
+          />
+          <p class="text-3xl">About</p>
+        </div>
+
+        <div class="flex w-fit flex-col gap-10">
+          {about.map((text) => <p class="text-sm">{text}</p>)}
+        </div>
+      </div>
+
+      <div class="flex w-fit flex-col">
+        <div class="mb-5 flex flex-row gap-2">
+          <img
+            src="images/about/values.svg"
+            alt="Search icon"
+            class="h-[38px] w-[38px]"
+          />
+          <p class="text-3xl">Our values</p>
+        </div>
+
+        <div class="flex flex-col gap-10">
+          {customerService.map((text) => <p class="">{text}</p>)}
+        </div>
+
+        <div class="mt-20 flex flex-row justify-between gap-7">
+          <div>
+            <p class="mb-7 text-4xl">2014</p>
+            <p>We started providing services to clients</p>
+          </div>
+
+          <div>
+            <p class="mb-7 text-4xl">30M+</p>
+            <p>Deals executed each month</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="box my-10 grid grid-rows-1 gap-x-20 gap-y-10 md:grid-cols-3">
+      {
+        features.map(({ title, description, imgSrc, imgAlt }) => (
+          <div class="flex flex-col gap-2">
+            <div class="flex items-center gap-2">
+              <img src={imgSrc} alt={imgAlt} class="h-8 w-8" />
+              <p class="font-semibold">{title}</p>
+            </div>
+            <p class="text-sm">{description}</p>
+          </div>
+        ))
+      }
+    </div>
+
+    <div class="box my-20 p-10">
+      <div class="mb-7 flex flex-row items-center justify-center gap-2">
+        <img src="images/about/contactus.svg" alt="Contact icon" />
+        <p class="text-3xl">Contact us</p>
+      </div>
+
+      <div class="flex flex-col justify-center gap-10 md:flex-row md:gap-20">
+        <div class="flex flex-col gap-7">
+          <div>
+            <div class="flex flex-row items-center gap-3">
+              <img
+                src="images/about/support.png"
+                alt="Contact icon"
+                class="h-auto w-12"
+              />
+              <p class="">Customer support</p>
+            </div>
+            <p class="mt-2 text-sm">24 hours a day, 7 days a week</p>
+          </div>
+
+          <div>
+            <div class="flex flex-row items-center gap-3">
+              <img
+                src="images/about/contactus.svg"
+                alt="Contact icon"
+                class="h-auto w-8"
+              />
+              <p class="">Email address</p>
+            </div>
+            <p class="mt-2 text-sm">help@eo.support</p>
+          </div>
+        </div>
+
+        <div class="w-full md:w-5/12">
+          <form action="#">
+            <div class="mb-10">
+              <label
+                for="email"
+                class="mb-2 block text-sm font-medium text-gray-900 dark:text-gray-300"
+                >Your email</label
+              >
+              <input
+                type="email"
+                id="email"
+                class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg bg-[#374151] p-2.5 text-sm text-white shadow-sm"
+                placeholder="name@email.com"
+                required
+              />
+            </div>
+            <div class="mb-10">
+              <label
+                for="subject"
+                class="mb-2 block text-sm font-medium text-gray-900 dark:text-gray-300"
+                >Subject</label
+              >
+              <input
+                type="text"
+                id="subject"
+                class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg bg-[#374151] p-2.5 text-sm text-white shadow-sm"
+                placeholder="Let us know how we can help you"
+                required
+              />
+            </div>
+            <div class="mb-10 sm:col-span-2">
+              <label
+                for="message"
+                class="mb-2 block text-sm font-medium text-gray-900 dark:text-gray-300"
+                >Your message</label
+              >
+              <textarea
+                id="message"
+                rows="6"
+                class="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg bg-[#374151] p-2.5 text-sm text-white shadow-sm"
+                placeholder="Leave a comment..."></textarea>
+            </div>
+            <Button title="Send us a message" />
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex h-auto items-center justify-center">
+      <p class="platform-version py-7 text-center text-xs">
+        Registration: EOLabs LLC, Company No. 377 LLC 2020, having its
+        registered address at First Floor, First St. Vincent Bank Ltd. <br /> James
+        Street, PO Box 1574, Kingstown, St. Vincent and the Grenadines Headquarters:
+        HAR Building, Ginger Village, Belmont, St.Vincent and the Grenadines VC0100
+      </p>
+    </div>
+  </section>
+</Layout>

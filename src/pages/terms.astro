@@ -1,0 +1,73 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const terms = [
+  {
+    title: "1. Introduction",
+    content:
+      "Welcome to VertexOption. These Terms and Conditions govern your use of our platform. By accessing or using our services, you agree to comply with these terms.",
+  },
+  {
+    title: "2. Eligibility",
+    content:
+      "To use VertexOption, you must be at least 18 years old and legally capable of entering into a binding agreement. Certain jurisdictions may have additional restrictions.",
+  },
+  {
+    title: "3. Account Registration",
+    content:
+      "You are required to provide accurate and complete information when registering an account. You are responsible for maintaining the confidentiality of your account credentials.",
+  },
+  {
+    title: "4. Deposits and Withdrawals",
+    content:
+      "Deposits and withdrawals must be made using methods approved by VertexOption. Withdrawals will be processed to the original deposit source, and third-party payments are not allowed.",
+  },
+  {
+    title: "5. Trading Risks",
+    content:
+      "Trading involves financial risks. You acknowledge that VertexOption is not liable for any losses incurred due to market fluctuations.",
+  },
+  {
+    title: "6. Prohibited Activities",
+    content:
+      "You agree not to engage in fraudulent, illegal, or manipulative activities while using VertexOption. Any violation may result in account suspension or termination.",
+  },
+  {
+    title: "7. Security and Privacy",
+    content:
+      "We prioritize the security of your personal data. Our Privacy Policy outlines how we collect, use, and protect your information.",
+  },
+  {
+    title: "8. Termination of Services",
+    content:
+      "VertexOption reserves the right to suspend or terminate accounts that violate these terms, engage in suspicious activities, or fail to comply with regulatory requirements.",
+  },
+  {
+    title: "9. Changes to Terms",
+    content:
+      "We may update these Terms and Conditions at any time. Continued use of our services after changes indicates acceptance of the new terms.",
+  },
+  {
+    title: "10. Contact Information",
+    content:
+      "If you have any questions regarding these Terms and Conditions, please contact our support team at support@vertexoption.com.",
+  },
+];
+---
+
+<Layout>
+  <section class="box mb-20 mt-10 px-6 py-12">
+    <p class="text-4xl">Terms and Conditions</p>
+
+    <div class="mt-10 flex flex-col gap-10">
+      {
+        terms.map(({ title, content }) => (
+          <div>
+            <p class="font-bold">{title}</p>
+            <p class="mt-3 text-[#95A0B6]">{content}</p>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+</Layout>
