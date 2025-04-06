@@ -11,13 +11,19 @@ import { platforms, steps, global } from "../data";
   <!-- Hero Section -->
   <section class="hero box">
     <div class="hero-content">
-      <div class="mt-5 md:mb-10">
-        <p class="hero-text hero-highlight-1">Investing Is</p>
-        <p class="hero-text text-white">Even Better Now</p>
+      <div class="mt-5">
+        <p
+          class="text-3xl sm:text-5xl md:text-6xl lg:text-7xl hero-highlight-1"
+        >
+          Introducing Autocopy
+        </p>
+        <p class="text-xl sm:text-3xl md:text-4xl lg:text-5xl text-white">
+          Trade smarter with one click
+        </p>
       </div>
-      <p class="text-xs text-[#6D7BA0] md:text-xl">
-        Providing you with the opportunity to invest <br /> in more than 100 assets
-        for continuous income
+      <p class="text-[#6D7BA0] text-sm sm:text-xl">
+        Copy experienced traders, learn strategies, <br /> and grow with a thriving
+        community <br /> all while accessing 100+ assets for continuous income.
       </p>
 
       <ul class="flex flex-row items-center">
@@ -34,12 +40,26 @@ import { platforms, steps, global } from "../data";
       <Button title="Get Started" />
     </div>
 
-    <img src="images/hero/hero.png" alt="Phone mockup" class="hero-img" />
+    <img
+      src="images/hero/hero.png"
+      alt="Phone mockup"
+      class="order-1 mx-auto max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl animate-pulse-zoom"
+    />
   </section>
 
   <!-- Platform Section -->
-  <Section title="For All Devices">
-    <Card items={platforms} />
+  <Section title="Why Trade With Us">
+    <!-- <Card items={platforms} /> -->
+    <div class="flex flex-col gap-5 md:flex-row">
+      {
+        platforms.map(({ title, subtitle }) => (
+          <div class="card text-center">
+            <p class="text-blue-300 mb-1 font-semibold">{title}</p>
+            <p class="text-white text-xs">{subtitle}</p>
+          </div>
+        ))
+      }
+    </div>
   </Section>
 
   <!-- Steps Section -->
@@ -68,9 +88,11 @@ import { platforms, steps, global } from "../data";
           alt="Trophy"
           class="h-[34px] w-[34px]"
         />
-        <p class="text-2xl text-white">Best Trading Platform</p>
+        <p class="text-2xl text-white text-center">
+          Best Copy Trading Experience
+        </p>
         <p class="platform-version text-center">
-          Award winner at China Trading Expo Shenzhen, 6-7 May 2017
+          Empowering Traders Across 100+ Countries Since Launch
         </p>
       </div>
     </div>

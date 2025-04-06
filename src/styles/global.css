@@ -76,10 +76,6 @@ body {
   @apply order-2 flex flex-col gap-3 sm:gap-12 md:order-1 md:w-1/2;
 }
 
-.hero-text {
-  @apply text-4xl sm:text-7xl;
-}
-
 .hero-highlight-1 {
   @apply mb-2 flex-row-reverse font-semibold text-[#67B4F7];
 }
@@ -94,6 +90,22 @@ body {
 
 .hero-img {
   @apply order-1 m-0 mx-auto mt-7 max-h-full w-56 max-w-xs p-0 sm:w-48 sm:max-w-xs md:w-64 md:max-w-sm lg:w-72 lg:max-w-md;
+}
+
+@keyframes pulseZoom {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-pulse-zoom {
+  animation: pulseZoom 3s ease-in-out infinite;
 }
 
 /* Platform Section */
@@ -122,4 +134,3 @@ body {
   margin: 0 auto;
 }
 
-/* About Page */

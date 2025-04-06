@@ -16,10 +16,10 @@ export const footerLinks = [
 
 // Home
 export const platforms = [
-  { name: "Android", subtitle: "4.4 and higher", logo: "android.svg" },
-  { name: "iOS", subtitle: "12.0 and higher", logo: "ios.svg" },
-  { name: "macOS", subtitle: "Mavericks and higher", logo: "macos.svg" },
-  { name: "Windows", subtitle: "XP and higher", logo: "win.svg" },
+  { title: "Copy Top Traders Instantly", subtitle: "Follow and automatically copy the trades of successful, high-performing investors with a single click"},
+  { title: "Fast & Intuitive Platform", subtitle: "Enjoy a sleek, user-friendly interface optimized for both beginners and advanced traders"},
+  { title: "Real Time Market Execution", subtitle: "Execute trades with lighting-fast speed and accurate pricing on a global scale with assured returns"},
+  { title: "Secure and Regulated", subtitle: "Your Funds and data are protected with top-tier security protocols and a commitment to compliance"},
 ];
 
 export const steps = [
@@ -30,15 +30,15 @@ export const steps = [
     logo: "deposit.svg",
   },
   {
-    name: "Trade",
+    name: "Copy Traders",
     subtitle:
-      "Trade any of 100 assets and stocks. Use technical analysis and trade the news",
+      "Begin by copying your preferred trader, we have the most successful professional traders.",
     logo: "choose.svg",
   },
   {
     name: "Withdraw",
     subtitle:
-      "Get funds easily to your bank card or e-wallet. We take no commission.",
+      "withdraw your funds easily to your bank card or e-wallet. We take no commission.",
     logo: "withdraw.svg",
   },
 ];
