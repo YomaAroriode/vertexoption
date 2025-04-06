@@ -59,7 +59,7 @@ body {
 }
 
 .btn-register {
-  @apply flex items-center justify-center gap-5 rounded-md border border-white px-5 py-2;
+  @apply flex items-center justify-center gap-2 rounded-md border border-white px-3 py-2 ml-2;
   border: 1px solid #39b2ff;
 }
 

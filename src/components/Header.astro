@@ -1,6 +1,5 @@
 ---
 import { navLinks } from "../data";
-import { siteName } from "../config";
 ---
 
 <header class="header box z-50">
@@ -22,7 +21,6 @@ import { siteName } from "../config";
 
   <div class="z-50 hidden cursor-pointer items-center gap-2 sm:flex">
     <a href="/"> <img src="logo.png" alt="logo" class="w-56" /></a>
-    <!-- <p class="text-2xl text-white">{siteName}</p> -->
   </div>
 
   <div class="flex gap-5">
@@ -31,8 +29,21 @@ import { siteName } from "../config";
     >
     <a
       href="https://app.vertexoption.com/user/register.php"
-      class="btn btn-register">Register</a
-    >
+      class="btn btn-register"
+      >Register <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="size-4"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="m8.25 4.5 7.5 7.5-7.5 7.5"></path>
+      </svg>
+    </a>
   </div>
 </header>
 
@@ -41,8 +52,14 @@ import { siteName } from "../config";
   id="fullscreen-menu"
   class="invisible fixed inset-0 z-40 bg-[#01051E] text-white opacity-0 transition-all duration-500 ease-in-out"
 >
-  <div class="nav flex flex-col gap-20 pl-[45px] pt-10">
+  <div class="nav flex flex-col gap-20 pl-[30px] pt-10">
     <p id="close-menu" class="w-fit cursor-pointer text-2xl font-bold">✕</p>
+
+    <div class="absolute left-1/2 transform -translate-x-1/2 top-6 sm:hidden">
+      <a href="/">
+        <img src="logo.png" alt="logo" class="w-56" />
+      </a>
+    </div>
 
     <div class="flex flex-col gap-5 text-xl md:gap-10 md:text-3xl">
       {
